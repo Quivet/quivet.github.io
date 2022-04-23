@@ -18,7 +18,7 @@ const mainBranch = "main";
     try {
       await execa("rm", ["-r", folderName]);
     } catch (e) {
-      await execa("rmdir", ["/s", folderName])
+      await execa("rimraf", [folderName])
     }
     
     await execa("git", ["checkout", "-f", mainBranch]);
